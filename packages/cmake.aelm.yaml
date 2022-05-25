@@ -1,0 +1,39 @@
+cmake:
+  bin: '{root}/cmake/bin'
+  description: |
+    "CMake is an open-source, cross-platform family of tools designed to build,
+    test and package software. CMake is used to control the software
+    compilation process using simple platform and compiler independent
+    configuration files, and generate native makefiles and workspaces that can
+    be used in the compiler environment of your choice. The suite of CMake
+    tools were created by Kitware in response to the need for a powerful,
+    cross-platform build environment for open-source projects such as ITK and
+    VTK."
+    - https://cmake.org
+  versions:
+    3.23.1:
+      osx:
+        downloads:
+          - url: https://github.com/Kitware/CMake/releases/download/v{version}/cmake-{version}-macos10.10-universal.tar.gz
+        setup:
+          - mv {root}/cmake-{version}-macos10.10-universal {root}/cmake
+      armosx:
+        downloads:
+          - url: https://github.com/Kitware/CMake/releases/download/v{version}/cmake-{version}-macos10.10-universal.tar.gz
+        setup:
+          - mv {root}/cmake-{version}-macos10.10-universal {root}/cmake
+      linux:
+        downloads:
+          - url: https://github.com/Kitware/CMake/releases/download/v{version}/cmake-{version}-linux-x86_64.tar.gz
+        setup:
+          - mv {root}/cmake-{version}-linux-x86_64 {root}/cmake
+      armlinux:
+        downloads:
+          - url: https://github.com/Kitware/CMake/releases/download/v{version}/cmake-{version}-linux-aarch64.tar.gz
+        setup:
+          - mv {root}/cmake-{version}-linux-aarch64 {root}/cmake
+      windows:
+        downloads:
+          - url: https://github.com/Kitware/CMake/releases/download/v{version}/cmake-{version}-windows-x86_64.zip
+        setup:
+          - move {root}\cmake-{version}-windows-x86_64 {root}\cmake

@@ -1,0 +1,43 @@
+julia:
+  description: |
+    "Julia is a high-level, high-performance, dynamic programming language.
+    While it is a general-purpose language and can be used to write any
+    application, many of its features are well suited for numerical analysis
+    and computational science."
+    - https://en.wikipedia.org/wiki/Julia_(programming_language)
+    - https://julialang.org/
+  envvars:
+    JULIA_DEPOT_PATH: '{root}/julia'
+  bin: '{root}/julia/bin'
+  setup:
+    - mv {root}/julia-{version} {root}/julia
+  versions:
+    1.7.2:
+      linux:
+        downloads:
+          - url: https://julialang-s3.julialang.org/bin/linux/x64/1.7/julia-{version}-linux-x86_64.tar.gz
+      armlinux:
+        downloads:
+          - url: https://julialang-s3.julialang.org/bin/linux/aarch64/1.7/julia-{version}-linux-aarch64.tar.gz
+      osx:
+        downloads:
+          - url: https://julialang-s3.julialang.org/bin/mac/x64/1.7/julia-{version}-mac64.tar.gz
+      armosx:
+        downloads:
+          - url: https://julialang-s3.julialang.org/bin/mac/aarch64/1.7/julia-{version}-macaarch64.dmg
+      windows:
+        downloads:
+          - url: https://julialang-s3.julialang.org/bin/winnt/x64/1.7/julia-{version}-win64.zip
+    1.6.6:
+      linux:
+        downloads:
+          - url: https://julialang-s3.julialang.org/bin/linux/x64/1.6/julia-{version}-linux-x86_64.tar.gz
+      armlinux:
+        downloads:
+          - url: https://julialang-s3.julialang.org/bin/linux/aarch64/1.6/julia-{version}-linux-aarch64.tar.gz
+      osx:
+        downloads:
+          - url: https://julialang-s3.julialang.org/bin/mac/x64/1.6/julia-{version}-mac64.tar.gz
+      windows:
+        downloads:
+          - url: https://julialang-s3.julialang.org/bin/winnt/x64/1.6/julia-{version}-win64.zip
