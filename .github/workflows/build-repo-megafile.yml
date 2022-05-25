@@ -1,0 +1,36 @@
+name: Modified Package Recipes Installation Test
+
+on:
+  push:
+    branches: [main]
+    paths: [packages]
+  pull_request:
+    branches: [main]
+    paths: [packages]
+  workflow_dispatch:
+    inputs:
+      release:
+        type: boolean
+
+jobs:
+  bintest:
+    name: 'bintest new/modified recipes'
+    runs-on: ubuntu-latest
+    if: (github.event_name == 'workflow_dispatch' && github.event.inputs.release == 'true') || (github.event_name == 'push') || (github.event_name == 'pull_request')
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Construct File
+        run: |
+          for file in packages/*.yaml; do
+            echo $(basename ${file#packages/} .aelm.yaml): >> aelm-repo.yaml
+            cat ${file} | nl -bn -w2 >> aelm-repo.yaml
+          done
+      - name: Create new repo release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: aelm-repo.yaml
+          asset_name: aelm-repo.yaml
+          tag: latest
+          overwrite: true
