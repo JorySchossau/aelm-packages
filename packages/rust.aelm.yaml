@@ -1,34 +1,33 @@
-rust:
-  description: |
-    "Rust is a multi-paradigm, general-purpose programming language designed
-    for performance and safety, especially safe concurrency."
-    - https://en.wikipedia.org/wiki/Rust_(programming_language)
-    - https://www.rust-lang.org/
-  downloads:
-    - url: https://sh.rustup.rs
-      name: rustup-init.sh
-      uncompress: false
-  envvars:
-    RUSTUP_HOME: '{root}/rustup'
-    CARGO_HOME: '{root}/cargo'
-    RUST_PATH: '{root}/cargo/bin'
-  bin: '{root}/cargo/bin'
-  setup:
-    - mv {root}/sh.rustup.rs {root}/rustup-init.sh
-    - sh {root}/rustup-init.sh -y --no-modify-path
-  versions:
-    latest:
-      osx: {}
-      armosx: {}
-      linux: {}
-      armlinux: {}
-      windows:
-        unavailable: |
-          Work in Progress. rustup-init.exe needs to be called with the right params.
-          I'll get to it eventually or PRs welcome :)
-        downloads:
-          - url: 'https://win.rustup.rs/x86_64'
-            name: rustup-init.exe
-            uncompress: false
-        setup:
-          - echo TODO set ENVVARS=HERE; rustup-init.exe -y --more-here
+description: |
+  "Rust is a multi-paradigm, general-purpose programming language designed
+  for performance and safety, especially safe concurrency."
+  - https://en.wikipedia.org/wiki/Rust_(programming_language)
+  - https://www.rust-lang.org/
+downloads:
+  - url: https://sh.rustup.rs
+    name: rustup-init.sh
+    uncompress: false
+envvars:
+  RUSTUP_HOME: '{root}/rustup'
+  CARGO_HOME: '{root}/cargo'
+  RUST_PATH: '{root}/cargo/bin'
+bin: '{root}/cargo/bin'
+setup:
+  - mv {root}/sh.rustup.rs {root}/rustup-init.sh
+  - sh {root}/rustup-init.sh -y --no-modify-path
+versions:
+  latest:
+    osx: {}
+    armosx: {}
+    linux: {}
+    armlinux: {}
+    windows:
+      unavailable: |
+        Work in Progress. rustup-init.exe needs to be called with the right params.
+        I'll get to it eventually or PRs welcome :)
+      downloads:
+        - url: 'https://win.rustup.rs/x86_64'
+          name: rustup-init.exe
+          uncompress: false
+      setup:
+        - echo TODO set ENVVARS=HERE; rustup-init.exe -y --more-here

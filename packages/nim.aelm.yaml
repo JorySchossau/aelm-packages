@@ -1,36 +1,35 @@
-nim:
-  description: |
-    "Nim is a statically typed compiled systems programming language.
-    It combines successful concepts from mature languages
-    like Python, Ada and Modula."
-    - https://nim-lang.org/
-  bin: '{root}/nim/bin'
-  versions:
-    1.6.6:
+description: |
+  "Nim is a statically typed compiled systems programming language.
+  It combines successful concepts from mature languages
+  like Python, Ada and Modula."
+  - https://nim-lang.org/
+bin: '{root}/nim/bin'
+versions:
+  1.6.6:
+    setup:
+      - mv {root}/nim-{version} {root}/nim
+    linux:
+      downloads:
+        - url: https://nim-lang.org/download/nim-{version}-linux_x64.tar.xz
+    windows:
+      downloads:
+        - url: https://nim-lang.org/download/nim-{version}_x64.zip
       setup:
-        - mv {root}/nim-{version} {root}/nim
-      linux:
-        downloads:
-          - url: https://nim-lang.org/download/nim-{version}-linux_x64.tar.xz
-      windows:
-        downloads:
-          - url: https://nim-lang.org/download/nim-{version}_x64.zip
-        setup:
-          - move {root}\nim-{version} {root}\nim
-      osx:
-        downloads:
-          - url: https://github.com/nim-lang/nightlies/releases/download/latest-version-1-6/macosx_x64.tar.xz
-    1.6.4:
+        - move {root}\nim-{version} {root}\nim
+    osx:
+      downloads:
+        - url: https://github.com/nim-lang/nightlies/releases/download/latest-version-1-6/macosx_x64.tar.xz
+  1.6.4:
+    setup:
+      - mv {root}/nim-{version} {root}/nim
+    linux:
+      downloads:
+        - url: https://nim-lang.org/download/nim-{version}-linux_x64.tar.xz
+    windows:
+      downloads:
+        - url: https://nim-lang.org/download/nim-{version}_x64.zip
       setup:
-        - mv {root}/nim-{version} {root}/nim
-      linux:
-        downloads:
-          - url: https://nim-lang.org/download/nim-{version}-linux_x64.tar.xz
-      windows:
-        downloads:
-          - url: https://nim-lang.org/download/nim-{version}_x64.zip
-        setup:
-          - move {root}\nim-{version} {root}\nim
-      osx:
-        downloads:
-          - url: https://github.com/nim-lang/nightlies/releases/download/latest-version-1-6/macosx_x64.tar.xz
+        - move {root}\nim-{version} {root}\nim
+    osx:
+      downloads:
+        - url: https://github.com/nim-lang/nightlies/releases/download/latest-version-1-6/macosx_x64.tar.xz
