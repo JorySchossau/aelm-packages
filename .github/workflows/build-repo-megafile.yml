@@ -16,7 +16,7 @@ jobs:
   bintest:
     name: 'bintest new/modified recipes'
     runs-on: ubuntu-latest
-    if: (github.event_name == 'workflow_dispatch' && github.event.inputs.release == 'true') || (github.event_name == 'push') || (github.event_name == 'pull_request')
+    if: ${{ (github.event_name == 'workflow_dispatch' && github.event.inputs.release == 'true') || (github.event_name == 'push') || (github.event_name == 'pull_request') }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
