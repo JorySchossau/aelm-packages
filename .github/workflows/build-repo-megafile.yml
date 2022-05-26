@@ -22,10 +22,7 @@ jobs:
         uses: actions/checkout@v3
       - name: Construct File
         run: |
-          for file in packages/*.yaml; do
-            echo $(basename ${file#packages/} .aelm.yaml): >> aelm-repo.yaml
-            cat ${file} | nl -bn -w2 >> aelm-repo.yaml
-          done
+          cat packages/*.yaml > aelm-repo.yaml
       - name: Create new repo release
         uses: svenstaro/upload-release-action@v2
         with:
