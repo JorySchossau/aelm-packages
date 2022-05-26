@@ -3,10 +3,10 @@ name: Release new repo file on packages update
 on:
   push:
     branches: [main]
-    paths: [packages]
+    paths: [packages/*.yaml]
   pull_request:
     branches: [main]
-    paths: [packages]
+    paths: [packages/*yaml]
   workflow_dispatch:
     inputs:
       release:
