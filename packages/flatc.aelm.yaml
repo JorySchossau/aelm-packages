@@ -4,7 +4,9 @@ description: |
   Rust and Swift. It was originally created at Google for game development
   and other performance-critical applications."
   - https://google.github.io/flatbuffers/
+
 bin: '{root}'
+
 versions:
   2.0.0:
     linux:
