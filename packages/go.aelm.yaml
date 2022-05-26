@@ -1,24 +1,25 @@
-description: |
-  "Go is an open source programming language supported by Google [that is]
-  easy to learn and get started with [provides] built-in concurrency and a
-  robust standard library [and has a] growing ecosystem of partners,
-  communities, and tools"
-  - https://go.dev/
-bin: '{root}/go/bin'
-versions:
-  1.18.1:
-    linux:
-      downloads:
-        - url: https://go.dev/dl/go{version}.linux-amd64.tar.gz
-    osx:
-      downloads:
-        - url: https://go.dev/dl/go{version}.darwin-amd64.tar.gz
-    windows:
-      downloads:
-        - url: https://go.dev/dl/go{version}.windows-amd64.zip
-    armlinux:
-      downloads:
-        - url: https://go.dev/dl/go{version}.linux-arm64.tar.gz
-    armosx:
-      downloads:
-        - url: https://go.dev/dl/go{version}.darwin-arm64.tar.gz
+go:
+   description: |
+     "Go is an open source programming language supported by Google [that is]
+     easy to learn and get started with [provides] built-in concurrency and a
+     robust standard library [and has a] growing ecosystem of partners,
+     communities, and tools"
+     - https://go.dev/
+   bin: '{root}/go/bin'
+   versions:
+     1.18.1:
+       linux:
+         downloads:
+           - url: https://go.dev/dl/go{version}.linux-amd64.tar.gz
+       osx:
+         downloads:
+           - url: https://go.dev/dl/go{version}.darwin-amd64.tar.gz
+       windows:
+         downloads:
+           - url: https://go.dev/dl/go{version}.windows-amd64.zip
+       armlinux:
+         downloads:
+           - url: https://go.dev/dl/go{version}.linux-arm64.tar.gz
+       armosx:
+         downloads:
+           - url: https://go.dev/dl/go{version}.darwin-arm64.tar.gz

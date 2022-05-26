@@ -1,50 +1,51 @@
-description: |
-  "Python is a programming language that lets you work more quickly and
-  integrate your systems more effectively."
-  - https://www.python.org/
-setup: ln -s {root}/python/bin/python3 {root}/python/bin/python
-bin: '{root}/python/bin'
-envvars:
-  PYTHONHOME: '{root}/python'
-  PYTHONPATH: '{cwd}'
-versions:
-  3.10.3:
-    osx:
-      downloads:
-        - url: https://github.com/indygreg/python-build-standalone/releases/download/20220318/cpython-3.10.3+20220318-x86_64-apple-darwin-install_only.tar.gz
-    linux:
-      downloads:
-        - url: https://github.com/indygreg/python-build-standalone/releases/download/20220318/cpython-3.10.3+20220318-x86_64-unknown-linux-gnu-install_only.tar.gz
-    windows:
-      downloads:
-        - url: https://github.com/indygreg/python-build-standalone/releases/download/20220318/cpython-3.10.3+20220318-x86_64-pc-windows-msvc-shared-install_only.tar.gz
-      bin: '{root}/python'
-      setup: copy {root}\python\python.exe {root}\python\python3.exe
-    armosx:
-      downloads:
-        - url: https://github.com/indygreg/python-build-standalone/releases/download/20220318/cpython-3.10.3+20220318-aarch64-apple-darwin-install_only.tar.gz
-    armlinux:
-      downloads:
-        - url: https://github.com/indygreg/python-build-standalone/releases/download/20220318/cpython-3.10.3+20220318-aarch64-unknown-linux-gnu-install_only.tar.gz
-  3.7.9:
-    setup: ln -s {root}/python/install/bin/python3 {root}/python/install/bin/python
-    bin: '{root}/python/install/bin'
-    envvars:
-      PYTHONHOME: '{root}/python/install'
-      PYTHONPATH: '{cwd}'
-    osx:
-      downloads:
-        - url: https://github.com/indygreg/python-build-standalone/releases/download/20200822/cpython-3.7.9-x86_64-apple-darwin-pgo-20200823T0123.tar.zst
-    linux:
-      downloads:
-        - url: https://github.com/indygreg/python-build-standalone/releases/download/20200822/cpython-3.7.9-x86_64-unknown-linux-gnu-pgo-20200823T0036.tar.zst
-    windows:
-      downloads:
-        - url: https://github.com/indygreg/python-build-standalone/releases/download/20200822/cpython-3.7.9-x86_64-pc-windows-msvc-shared-pgo-20200823T0118.tar.zst
-      setup: copy {root}\python\install\python.exe {root}\python\install\python3.exe
-    armosx:
-      downloads:
-        - url: https://github.com/indygreg/python-build-standalone/releases/download/20220318/cpython-3.10.3+20220318-aarch64-apple-darwin-install_only.tar.gz
-    armlinux:
-      downloads:
-        - url: https://github.com/indygreg/python-build-standalone/releases/download/20220318/cpython-3.10.3+20220318-aarch64-unknown-linux-gnu-install_only.tar.gz
+python:
+   description: |
+     "Python is a programming language that lets you work more quickly and
+     integrate your systems more effectively."
+     - https://www.python.org/
+   setup: ln -s {root}/python/bin/python3 {root}/python/bin/python
+   bin: '{root}/python/bin'
+   envvars:
+     PYTHONHOME: '{root}/python'
+     PYTHONPATH: '{cwd}'
+   versions:
+     3.10.3:
+       osx:
+         downloads:
+           - url: https://github.com/indygreg/python-build-standalone/releases/download/20220318/cpython-3.10.3+20220318-x86_64-apple-darwin-install_only.tar.gz
+       linux:
+         downloads:
+           - url: https://github.com/indygreg/python-build-standalone/releases/download/20220318/cpython-3.10.3+20220318-x86_64-unknown-linux-gnu-install_only.tar.gz
+       windows:
+         downloads:
+           - url: https://github.com/indygreg/python-build-standalone/releases/download/20220318/cpython-3.10.3+20220318-x86_64-pc-windows-msvc-shared-install_only.tar.gz
+         bin: '{root}/python'
+         setup: copy {root}\python\python.exe {root}\python\python3.exe
+       armosx:
+         downloads:
+           - url: https://github.com/indygreg/python-build-standalone/releases/download/20220318/cpython-3.10.3+20220318-aarch64-apple-darwin-install_only.tar.gz
+       armlinux:
+         downloads:
+           - url: https://github.com/indygreg/python-build-standalone/releases/download/20220318/cpython-3.10.3+20220318-aarch64-unknown-linux-gnu-install_only.tar.gz
+     3.7.9:
+       setup: ln -s {root}/python/install/bin/python3 {root}/python/install/bin/python
+       bin: '{root}/python/install/bin'
+       envvars:
+         PYTHONHOME: '{root}/python/install'
+         PYTHONPATH: '{cwd}'
+       osx:
+         downloads:
+           - url: https://github.com/indygreg/python-build-standalone/releases/download/20200822/cpython-3.7.9-x86_64-apple-darwin-pgo-20200823T0123.tar.zst
+       linux:
+         downloads:
+           - url: https://github.com/indygreg/python-build-standalone/releases/download/20200822/cpython-3.7.9-x86_64-unknown-linux-gnu-pgo-20200823T0036.tar.zst
+       windows:
+         downloads:
+           - url: https://github.com/indygreg/python-build-standalone/releases/download/20200822/cpython-3.7.9-x86_64-pc-windows-msvc-shared-pgo-20200823T0118.tar.zst
+         setup: copy {root}\python\install\python.exe {root}\python\install\python3.exe
+       armosx:
+         downloads:
+           - url: https://github.com/indygreg/python-build-standalone/releases/download/20220318/cpython-3.10.3+20220318-aarch64-apple-darwin-install_only.tar.gz
+       armlinux:
+         downloads:
+           - url: https://github.com/indygreg/python-build-standalone/releases/download/20220318/cpython-3.10.3+20220318-aarch64-unknown-linux-gnu-install_only.tar.gz

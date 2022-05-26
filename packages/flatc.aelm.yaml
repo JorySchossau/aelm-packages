@@ -1,59 +1,60 @@
-description: |
-  "FlatBuffers is an efficient cross platform serialization library for C++,
-  C#, C, Go, Java, Kotlin, JavaScript, Lobster, Lua, TypeScript, PHP, Python,
-  Rust and Swift. It was originally created at Google for game development
-  and other performance-critical applications."
-  - https://google.github.io/flatbuffers/
-
-bin: '{root}'
-
-
-versions:
-  2.0.0:
-    linux:
-      downloads:
-        - url: https://github.com/google/flatbuffers/releases/download/v2.0.0/Linux.flatc.binary.clang++-9.zip
-      setup: chmod +x {root}/flatc
-    osx:
-      downloads:
-        - url: https://github.com/google/flatbuffers/releases/download/v2.0.0/Mac.flatc.binary.zip
-      setup: chmod +x {root}/flatc
-    windows:
-      downloads:
-        - url: https://github.com/google/flatbuffers/releases/download/v2.0.0/Windows.flatc.binary.zip
-    armlinux:
-      downloads:
-        - url: https://github.com/google/flatbuffers/archive/refs/tags/v2.0.0.tar.gz
-      aelmscript: |
-        aelm init
-        aelm add zig cpp
-        aelm add cmake cmake
-        aelm add make make
-        aelm connect cpp cmake make
-        aelm exec cmake cmake -S flatbuffers-{version} -B flatbuffers-{version}/bin
-        aelm exec make make -C flatbuffers-{version}/bin -j$(nproc)
-      setup: |
-        cd {root}/flatbuffers-{version}
-        mv bin/flatc ..
-        mv bin/flathash ..
-      postsetup: |
-        cd {root}
-        rm -rf cpp cmake make flatbuffers-{version}
-    armosx:
-      downloads:
-        - url: https://github.com/google/flatbuffers/archive/refs/tags/v2.0.0.tar.gz
-      aelmscript: |
-        aelm init
-        aelm add zig cpp
-        aelm add cmake cmake
-        aelm add make make
-        aelm connect cpp cmake make
-        aelm exec cmake cmake -S flatbuffers-{version} -B flatbuffers-{version}/bin
-        aelm exec make make -C flatbuffers-{version}/bin -j$(nproc)
-      setup: |
-        cd {root}/flatbuffers-{version}
-        mv bin/flatc ..
-        mv bin/flathash ..
-      postsetup: |
-        cd {root}
-        rm -rf cpp cmake make flatbuffers-{version}
+flatc:
+   description: |
+     "FlatBuffers is an efficient cross platform serialization library for C++,
+     C#, C, Go, Java, Kotlin, JavaScript, Lobster, Lua, TypeScript, PHP, Python,
+     Rust and Swift. It was originally created at Google for game development
+     and other performance-critical applications."
+     - https://google.github.io/flatbuffers/
+   
+   bin: '{root}'
+   
+   
+   versions:
+     2.0.0:
+       linux:
+         downloads:
+           - url: https://github.com/google/flatbuffers/releases/download/v2.0.0/Linux.flatc.binary.clang++-9.zip
+         setup: chmod +x {root}/flatc
+       osx:
+         downloads:
+           - url: https://github.com/google/flatbuffers/releases/download/v2.0.0/Mac.flatc.binary.zip
+         setup: chmod +x {root}/flatc
+       windows:
+         downloads:
+           - url: https://github.com/google/flatbuffers/releases/download/v2.0.0/Windows.flatc.binary.zip
+       armlinux:
+         downloads:
+           - url: https://github.com/google/flatbuffers/archive/refs/tags/v2.0.0.tar.gz
+         aelmscript: |
+           aelm init
+           aelm add zig cpp
+           aelm add cmake cmake
+           aelm add make make
+           aelm connect cpp cmake make
+           aelm exec cmake cmake -S flatbuffers-{version} -B flatbuffers-{version}/bin
+           aelm exec make make -C flatbuffers-{version}/bin -j$(nproc)
+         setup: |
+           cd {root}/flatbuffers-{version}
+           mv bin/flatc ..
+           mv bin/flathash ..
+         postsetup: |
+           cd {root}
+           rm -rf cpp cmake make flatbuffers-{version}
+       armosx:
+         downloads:
+           - url: https://github.com/google/flatbuffers/archive/refs/tags/v2.0.0.tar.gz
+         aelmscript: |
+           aelm init
+           aelm add zig cpp
+           aelm add cmake cmake
+           aelm add make make
+           aelm connect cpp cmake make
+           aelm exec cmake cmake -S flatbuffers-{version} -B flatbuffers-{version}/bin
+           aelm exec make make -C flatbuffers-{version}/bin -j$(nproc)
+         setup: |
+           cd {root}/flatbuffers-{version}
+           mv bin/flatc ..
+           mv bin/flathash ..
+         postsetup: |
+           cd {root}
+           rm -rf cpp cmake make flatbuffers-{version}
