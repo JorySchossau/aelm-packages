@@ -10,49 +10,47 @@ versions:
     linux:
       downloads:
         - url: https://github.com/google/flatbuffers/releases/download/v2.0.0/Linux.flatc.binary.clang++-9.zip
-      setup:
-        - chmod +x {root}/flatc
+      setup: chmod +x {root}/flatc
     osx:
       downloads:
         - url: https://github.com/google/flatbuffers/releases/download/v2.0.0/Mac.flatc.binary.zip
-      setup:
-        - chmod +x {root}/flatc
+      setup: chmod +x {root}/flatc
     windows:
       downloads:
         - url: https://github.com/google/flatbuffers/releases/download/v2.0.0/Windows.flatc.binary.zip
     armlinux:
       downloads:
         - url: https://github.com/google/flatbuffers/archive/refs/tags/v2.0.0.tar.gz
-      aelmscript:
-        - init
-        - add zig cpp
-        - add cmake cmake
-        - add make make
-        - connect cpp cmake make
-        - exec cmake cmake -S flatbuffers-{version} -B flatbuffers-{version}/bin
-        - exec make make -C flatbuffers-{version}/bin -j$(nproc)
-      setup:
-        - cd {root}/flatbuffers-{version}
-        - mv bin/flatc ..
-        - mv bin/flathash ..
-      postsetup:
-        - cd {root}
-        - rm -rf cpp cmake make flatbuffers-{version}
+      aelmscript: |
+        aelm init
+        aelm add zig cpp
+        aelm add cmake cmake
+        aelm add make make
+        aelm connect cpp cmake make
+        aelm exec cmake cmake -S flatbuffers-{version} -B flatbuffers-{version}/bin
+        aelm exec make make -C flatbuffers-{version}/bin -j$(nproc)
+      setup: |
+        cd {root}/flatbuffers-{version}
+        mv bin/flatc ..
+        mv bin/flathash ..
+      postsetup: |
+        cd {root}
+        rm -rf cpp cmake make flatbuffers-{version}
     armosx:
       downloads:
         - url: https://github.com/google/flatbuffers/archive/refs/tags/v2.0.0.tar.gz
-      aelmscript:
-        - init
-        - add zig cpp
-        - add cmake cmake
-        - add make make
-        - connect cpp cmake make
-        - exec cmake cmake -S flatbuffers-{version} -B flatbuffers-{version}/bin
-        - exec make make -C flatbuffers-{version}/bin -j$(nproc)
-      setup:
-        - cd {root}/flatbuffers-{version}
-        - mv bin/flatc ..
-        - mv bin/flathash ..
-      postsetup:
-        - cd {root}
-        - rm -rf cpp cmake make flatbuffers-{version}
+      aelmscript: |
+        aelm init
+        aelm add zig cpp
+        aelm add cmake cmake
+        aelm add make make
+        aelm connect cpp cmake make
+        aelm exec cmake cmake -S flatbuffers-{version} -B flatbuffers-{version}/bin
+        aelm exec make make -C flatbuffers-{version}/bin -j$(nproc)
+      setup: |
+        cd {root}/flatbuffers-{version}
+        mv bin/flatc ..
+        mv bin/flathash ..
+      postsetup: |
+        cd {root}
+        rm -rf cpp cmake make flatbuffers-{version}

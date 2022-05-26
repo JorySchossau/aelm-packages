@@ -12,9 +12,10 @@ envvars:
   CARGO_HOME: '{root}/cargo'
   RUST_PATH: '{root}/cargo/bin'
 bin: '{root}/cargo/bin'
-setup:
-  - mv {root}/sh.rustup.rs {root}/rustup-init.sh
-  - sh {root}/rustup-init.sh -y --no-modify-path
+setup: |
+  mv {root}/sh.rustup.rs {root}/rustup-init.sh
+  sh {root}/rustup-init.sh -y --no-modify-path
+
 versions:
   latest:
     osx: {}
@@ -29,5 +30,4 @@ versions:
         - url: 'https://win.rustup.rs/x86_64'
           name: rustup-init.exe
           uncompress: false
-      setup:
-        - echo TODO set ENVVARS=HERE; rustup-init.exe -y --more-here
+      setup: echo TODO set ENVVARS=HERE; rustup-init.exe -y --more-here

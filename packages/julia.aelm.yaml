@@ -8,8 +8,7 @@ description: |
 envvars:
   JULIA_DEPOT_PATH: '{root}/julia'
 bin: '{root}/julia/bin'
-setup:
-  - mv {root}/julia-{version} {root}/julia
+setup: mv {root}/julia-{version} {root}/julia
 versions:
   1.7.2:
     linux:
