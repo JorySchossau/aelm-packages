@@ -1,0 +1,44 @@
+make:
+  description: |
+    "GNU Make is a tool which controls the generation of executables and other
+    non-source files of a program from the program's source files."
+    - https://www.gnu.org/software/make/
+  prefer_system: [make]
+  versions:
+    4.3:
+      linux:
+        downloads:
+          - url: http://ftp.de.debian.org/debian/pool/main/m/make-dfsg/make_4.3-4.1_amd64.deb
+            uncompress: false
+        setup: |
+          ar x {root}/make_4.3-4.1_amd64.deb --output={root}
+          tar xf {root}/data.tar.xz --directory={root}
+        bin: '{root}/usr/bin'
+      armlinux:
+        downloads:
+          - url: http://ftp.de.debian.org/debian/pool/main/m/make-dfsg/make_4.3-4.1_arm64.deb
+            uncompress: false
+        setup: |
+          ar x {root}/make_4.3-4.1_arm64.deb --output={root}
+          tar xf {root}/data.tar.xz --directory={root}
+        bin: '{root}/usr/bin'
+      windows:
+        downloads:
+          - url: https://sourceforge.net/projects/gnuwin32/files/make/3.81/make-3.81-bin.zip/download?use_mirror=iweb&download=
+            name: make-3.81-bin.zip
+          - url: https://sourceforge.net/projects/gnuwin32/files/make/3.81/make-3.81-dep.zip/download?use_mirror=iweb&download=
+            name: make-3.81-dep.zip
+      osx:
+        unavailable: |
+          echo 1.      Please install command-line tools for osx and run this again
+          echo   a)    In a terminal, run: xcode-select --install
+          echo   b)    Run: sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+          echo   c)    You may be prompted to accept a license.  If so, accept the license with: sudo xcodebuild -license
+          echo OR install the make utility through macports or homebrew or from source
+      armosx:
+        unavailable: |
+          echo 1.      Please install command-line tools for osx and run this again
+          echo   a)    In a terminal, run: xcode-select --install
+          echo   b)    Run: sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+          echo   c)    You may be prompted to accept a license.  If so, accept the license with: sudo xcodebuild -license
+          echo OR install the make utility through macports or homebrew or from source
