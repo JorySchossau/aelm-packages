@@ -4,30 +4,37 @@ zig:
      maintaining robust, optimal, and reusable software."
      - https://ziglang.org/
    bin: '{root}/zig'
+
    postsetup: |
      cp {root}/zig/g++ {root}/zig/clang++
      chmod +x {root}/zig/gcc {root}/zig/clang
      chmod +x {root}/zig/g++ {root}/zig/clang++
    
    versions:
+
      0.9.1:
+
        osx:
          downloads:
            - url: https://ziglang.org/download/{version}/zig-macos-x86_64-{version}.tar.xz
          setup: |
            mv {root}/zig-macos-x86_64-{version} {root}/zig
-           echo "#!/bin/env sh\n{root}/zig/zig cc -target x86_64-macos-gnu \$@" > {root}/zig/gcc
+           echo "#!/bin/env sh" > {root}/zig/gcc
+           echo "{root}/zig/zig cc -target x86_64-macos-gnu \$@" >> {root}/zig/gcc
            cp {root}/zig/gcc {root}/zig/clang
-           echo "#!/bin/env sh\n{root}/zig/zig c++ -target x86_64-macos-gnu \$@" > {root}/zig/g++
+           echo "#!/bin/env sh" > {root}/zig/g++
+           echo "{root}/zig/zig c++ -target x86_64-macos-gnu \$@" >> {root}/zig/g++
    
        linux:
          downloads:
            - url: https://ziglang.org/download/{version}/zig-linux-x86_64-{version}.tar.xz
          setup: |
            mv {root}/zig-linux-x86_64-{version} {root}/zig
-           echo "#!/bin/env sh\n{root}/zig/zig cc -target x86_64-linux-gnu \$@" > {root}/zig/gcc
-           'cp {root}/zig/gcc {root}/zig/clang'
-           echo "#!/bin/env sh\n{root}/zig/zig c++ -target x86_64-linux-gnu \$@" > {root}/zig/g++
+           echo "#!/bin/env sh" > {root}/zig/gcc
+           echo "{root}/zig/zig cc -target x86_64-linux-gnu \$@" >> {root}/zig/gcc
+           cp {root}/zig/gcc {root}/zig/clang
+           echo "#!/bin/env sh" > {root}/zig/g++
+           echo "{root}/zig/zig c++ -target x86_64-linux-gnu \$@" >> {root}/zig/g++
    
        windows:
          bin: '{root}\zig'
@@ -39,19 +46,25 @@ zig:
            py {root}\zig\gcc.bat {root}\zig\clang.bat
            cho @echo off & echo {root}\zig\zig c++ -target x86_64-windows-gnu %*) > {root}\zig\g++.bat
            py {root}\zig\g++.bat {root}\zig\clang++.bat
+           
        armosx:
          downloads:
            - url: https://ziglang.org/download/{version}/zig-macos-aarch64-{version}.tar.xz
          setup: |
            mv {root}/zig-macos-aarch64-{version} {root}/zig
-           echo "#!/bin/env sh\n{root}/zig/zig cc -target aarch64-macos-gnu \$@" > {root}/zig/gcc
+           echo "#!/bin/env sh" > {root}/zig/gcc
+           echo "{root}/zig/zig cc -target aarch64-macos-gnu \$@" >> {root}/zig/gcc
            cp {root}/zig/gcc {root}/zig/clang
-           echo "#!/bin/env sh\n{root}/zig/zig c++ -target aarch64-macos-gnu \$@" > {root}/zig/g++
+           echo "#!/bin/env sh" > {root}/zig/g++
+           echo "{root}/zig/zig c++ -target aarch64-macos-gnu \$@" >> {root}/zig/g++
+
        armlinux:
          downloads:
            - url: https://ziglang.org/download/{version}/zig-linux-aarch64-{version}.tar.xz
          setup: |
            mv {root}/zig-linux-aarch64-{version} {root}/zig
-           echo "#!/bin/env sh\n{root}/zig/zig cc -target aarch64-linux-gnu \$@" > {root}/zig/gcc
+           echo "#!/bin/env sh" > {root}/zig/gcc
+           echo "{root}/zig/zig cc -target aarch64-linux-gnu \$@" >> {root}/zig/gcc
            cp {root}/zig/gcc {root}/zig/clang
-           echo "#!/bin/env sh\n{root}/zig/zig c++ -target aarch64-linux-gnu \$@" > {root}/zig/g++
+           echo "#!/bin/env sh" > {root}/zig/g++
+           echo "{root}/zig/zig c++ -target aarch64-linux-gnu \$@" >> {root}/zig/g++
