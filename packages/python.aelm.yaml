@@ -4,7 +4,7 @@ python:
      integrate your systems more effectively."
      - https://www.python.org/
    setup: ln -s {root}/python/bin/python3 {root}/python/bin/python
-   bin: '{root}/python/bin'
+   bins: ['{root}/python/bin']
    envvars:
      PYTHONHOME: '{root}/python'
      PYTHONPATH: '{cwd}'
@@ -19,7 +19,7 @@ python:
        windows:
          downloads:
            - url: https://github.com/indygreg/python-build-standalone/releases/download/20220318/cpython-3.10.3+20220318-x86_64-pc-windows-msvc-shared-install_only.tar.gz
-         bin: '{root}/python'
+         bins: ['{root}\python','{root}\python\Scripts']
          setup: copy {root}\python\python.exe {root}\python\python3.exe
        armosx:
          downloads:
@@ -29,9 +29,9 @@ python:
            - url: https://github.com/indygreg/python-build-standalone/releases/download/20220318/cpython-3.10.3+20220318-aarch64-unknown-linux-gnu-install_only.tar.gz
      3.7.9:
        setup: ln -s {root}/python/install/bin/python3 {root}/python/install/bin/python
-       bin: '{root}/python/install/bin'
+       bins: ['{root}\python\install','{root}\python\install\Scripts']
        envvars:
-         PYTHONHOME: '{root}/python/install'
+         PYTHONHOME: '{root}\python\install'
          PYTHONPATH: '{cwd}'
        osx:
          downloads:

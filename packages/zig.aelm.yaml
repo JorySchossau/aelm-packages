@@ -3,7 +3,7 @@ zig:
      "Zig is a general-purpose programming language and toolchain for
      maintaining robust, optimal, and reusable software."
      - https://ziglang.org/
-   bin: '{root}/zig'
+   bins: ['{root}/zig']
 
    postsetup: |
      cp {root}/zig/g++ {root}/zig/clang++
@@ -37,7 +37,7 @@ zig:
            echo "{root}/zig/zig c++ -target x86_64-linux-gnu \$@" >> {root}/zig/g++
    
        windows:
-         bin: '{root}\zig'
+         bins: ['{root}\zig']
          downloads:
            - url: https://ziglang.org/download/{version}/zig-windows-x86_64-{version}.zip
          setup: move {root}\zig-windows-x86_64-{version} {root}\zig

@@ -1,5 +1,5 @@
 cmake:
-   bin: '{root}/cmake/bin'
+   bins: ['{root}/cmake/bin']
    description: |
      "CMake is an open-source, cross-platform family of tools designed to build,
      test and package software. CMake is used to control the software
@@ -15,19 +15,19 @@ cmake:
        osx:
          downloads:
            - url: https://github.com/Kitware/CMake/releases/download/v{version}/cmake-{version}-macos10.10-universal.tar.gz
-         setup: mv {root}/cmake-{version}-macos10.10-universal {root}/cmake
+         setup: mv -f {root}/cmake-{version}-macos10.10-universal {root}/cmake
        armosx:
          downloads:
            - url: https://github.com/Kitware/CMake/releases/download/v{version}/cmake-{version}-macos10.10-universal.tar.gz
-         setup: mv {root}/cmake-{version}-macos10.10-universal {root}/cmake
+         setup: mv -f {root}/cmake-{version}-macos10.10-universal {root}/cmake
        linux:
          downloads:
            - url: https://github.com/Kitware/CMake/releases/download/v{version}/cmake-{version}-linux-x86_64.tar.gz
-         setup: mv {root}/cmake-{version}-linux-x86_64 {root}/cmake
+         setup: mv -f {root}/cmake-{version}-linux-x86_64 {root}/cmake
        armlinux:
          downloads:
            - url: https://github.com/Kitware/CMake/releases/download/v{version}/cmake-{version}-linux-aarch64.tar.gz
-         setup: mv {root}/cmake-{version}-linux-aarch64 {root}/cmake
+         setup: mv -f {root}/cmake-{version}-linux-aarch64 {root}/cmake
        windows:
          downloads:
            - url: https://github.com/Kitware/CMake/releases/download/v{version}/cmake-{version}-windows-x86_64.zip

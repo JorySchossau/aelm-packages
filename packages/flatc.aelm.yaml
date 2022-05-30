@@ -6,7 +6,7 @@ flatc:
      and other performance-critical applications."
      - https://google.github.io/flatbuffers/
    
-   bin: '{root}'
+   bins: ['{root}']
    
    
    versions:
