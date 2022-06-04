@@ -14,7 +14,6 @@ nim:
        windows:
          downloads:
            - url: https://nim-lang.org/download/nim-{version}_x64.zip
-         setup: move {root}\nim-{version} {root}\nim
        osx:
          downloads:
            - url: https://github.com/nim-lang/nightlies/releases/download/latest-version-1-6/macosx_x64.tar.xz
@@ -26,7 +25,6 @@ nim:
        windows:
          downloads:
            - url: https://nim-lang.org/download/nim-{version}_x64.zip
-         setup: move {root}\nim-{version} {root}\nim
        osx:
          downloads:
            - url: https://github.com/nim-lang/nightlies/releases/download/latest-version-1-6/macosx_x64.tar.xz
