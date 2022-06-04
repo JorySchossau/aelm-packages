@@ -12,7 +12,7 @@ rust:
      #RUSTUP_HOME: '{root}/rustup'
      CARGO_HOME: '{root}/rust/cargo'
      RUST_PATH: '{root}/rust'
-   bins:
+   binpaths:
      - '{root}/rust/cargo/bin'
      - '{root}/rust/rls-preview/bin'
      - '{root}/rust/clippy-preview/bin'

@@ -8,7 +8,7 @@ julia:
      - https://julialang.org/
    envvars:
      JULIA_DEPOT_PATH: '{root}/julia'
-   bins: ['{root}/julia/bin']
+   binpaths: ['{root}/julia/bin']
    setup: mv {root}/julia-{version} {root}/julia
    versions:
      1.7.2:

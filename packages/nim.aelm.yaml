@@ -4,7 +4,7 @@ nim:
      It combines successful concepts from mature languages
      like Python, Ada and Modula."
      - https://nim-lang.org/
-   bins: ['{root}/nim/bin']
+   binpaths: ['{root}/nim/bin']
    versions:
      1.6.6:
        setup: mv {root}/nim-{version} {root}/nim

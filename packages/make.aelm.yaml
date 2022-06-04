@@ -13,7 +13,7 @@ make:
         setup: |
           ar x {root}/make_4.3-4.1_amd64.deb --output={root}
           tar xf {root}/data.tar.xz --directory={root}
-        bins: ['{root}/usr/bin']
+        binpaths: ['{root}/usr/bin']
       armlinux:
         downloads:
           - url: http://ftp.de.debian.org/debian/pool/main/m/make-dfsg/make_4.3-4.1_arm64.deb
@@ -21,7 +21,7 @@ make:
         setup: |
           ar x {root}/make_4.3-4.1_arm64.deb --output={root}
           tar xf {root}/data.tar.xz --directory={root}
-        bins: ['{root}/usr/bin']
+        binpaths: ['{root}/usr/bin']
       windows:
         downloads:
           - url: https://sourceforge.net/projects/gnuwin32/files/make/3.81/make-3.81-bin.zip/download?use_mirror=iweb&download=

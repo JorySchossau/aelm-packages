@@ -1,5 +1,5 @@
 cmake:
-   bins: ['{root}/cmake/bin']
+   binpaths: ['{root}/cmake/bin']
    description: |
      "CMake is an open-source, cross-platform family of tools designed to build,
      test and package software. CMake is used to control the software

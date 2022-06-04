@@ -5,7 +5,7 @@ go:
      robust standard library [and has a] growing ecosystem of partners,
      communities, and tools"
      - https://go.dev/
-   bins: ['{root}/go/bin']
+   binpaths: ['{root}/go/bin']
    versions:
      1.18.1:
        linux:
