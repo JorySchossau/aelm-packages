@@ -1,0 +1,38 @@
+code:
+  description: |
+    "Visual Studio Code, also commonly referred to as VS Code,[9] is a source-code
+    editor made by Microsoft for Windows, Linux and macOS.[10] Features include
+    support for debugging, syntax highlighting, intelligent code completion,
+    snippets, code refactoring, and embedded Git. Users can change the theme,
+    keyboard shortcuts, preferences, and install extensions that add additional
+    functionality."
+    - https://en.wikipedia.org/wiki/Visual_Studio_Code
+    - https://code.visualstudio.com/
+  binpaths: ['{root}/VSCode/bin']
+  versions:
+    latest:
+      windows:
+        setup: mv {root}/VSCode-win32-x64 {root}/VSCode
+        downloads:
+          - url: https://code.visualstudio.com/sha/download?build=stable&os=win32-x64-archive
+            name: stable.zip
+      linux:
+        setup: mv {root}/VSCode-linux-x64 {root}/VSCode
+        downloads:
+          - url: https://code.visualstudio.com/sha/download?build=stable&os=linux-x64
+            name: stable.tar.gz
+      osx:
+        setup: mv {root}/VSCode-darwin {root}/VSCode
+        downloads:
+          - url: https://code.visualstudio.com/sha/download?build=stable&os=darwin
+            name: stable.zip
+      armosx:
+        setup: mv {root}/VSCode-darwin-arm64 {root}/VSCode
+        downloads:
+          - url: https://code.visualstudio.com/sha/download?build=stable&os=darwin-arm64
+            name: stable.zip
+      armlinux:
+        setup: mv {root}/VSCode-linux-arm64 {root}/VSCode
+        downloads:
+          - url: https://code.visualstudio.com/sha/download?build=stable&os=linux-arm64
+            name: stable.tar.gz
