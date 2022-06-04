@@ -9,38 +9,51 @@ rust:
        name: rustup-init.sh
        uncompress: false
    envvars:
-     RUSTUP_HOME: '{root}/rustup'
-     CARGO_HOME: '{root}/cargo'
-     RUST_PATH: '{root}/cargo/bin'
-   bins: ['{root}/cargo/bin']
-   setup: |
-     mv {root}/sh.rustup.rs {root}/rustup-init.sh
-     sh {root}/rustup-init.sh -y --no-modify-path
-   
+     #RUSTUP_HOME: '{root}/rustup'
+     CARGO_HOME: '{root}/rust/cargo'
+     RUST_PATH: '{root}/rust'
+   bins:
+     - '{root}/rust/cargo/bin'
+     - '{root}/rust/rls-preview/bin'
+     - '{root}/rust/clippy-preview/bin'
+     - '{root}/rust/rustc/bin'
+     - '{root}/rust/rustfmt-preview/bin'
+     - '{root}/rust/rust-demangler-preview/bin'
    versions:
      latest:
-       osx: {}
-       armosx: {}
-       linux: {}
-       armlinux: {}
+       osx:
+         downloads:
+           - url: https://static.rust-lang.org/dist/rust-nightly-x86_64-apple-darwin.tar.gz
+         setup: 'mv rust-nightly-x86_64-apple-darwin rust'
+       armosx:
+         downloads:
+           - url: https://static.rust-lang.org/dist/rust-nightly-aarch64-apple-darwin.tar.gz
+         setup: 'mv rust-nightly-aarch64-apple-darwin rust'
+       linux:
+         downloads:
+           - url: https://static.rust-lang.org/dist/rust-nightly-x86_64-unknown-linux-gnu.tar.gz
+         setup: 'mv rust-nightly-x86_64-unknown-linux-gnu rust'
+       armlinux:
+         downloads:
+           - url: https://static.rust-lang.org/dist/rust-nightly-aarch64-unknown-linux-gnu.tar.gz
+         setup: 'mv rust-nightly-aarch64-unknown-linux-gnu rust'
        windows:
          downloads:
-           - url: https://aka.ms/vs/17/release/vs_buildtools.exe
-             uncompress: false
-           - url: https://win.rustup.rs/x86_64
-             name: rustup-init.exe
-             uncompress: false
-         envvars:
-           RUSTUP_HOME: '{root}\rustup'
-           CARGO_HOME: '{root}\cargo'
-           RUST_PATH: '{root}\cargo\bin'
-         setup: |
-           echo ""
-           echo "This can take a while to install rust prerequisites."
-           echo " -- Please be patient -- "
-           echo ""
-           # install vs build tools
-           {root}\vs_buildtools.exe --quiet --wait --norestart --nocache --installPath C:\BuildTools --add Microsoft.Component.MSBuild --add Microsoft.VisualStudio.Component.Windows10SDK.18362 --add Microsoft.VisualStudio.Component.VC.Tools.x86.x64
-           # install rust
-           start /w {root}\rustup-init.exe -y --no-modify-path -v
-         bins: ['{root}\cargo\bin']
+           - url: https://static.rust-lang.org/dist/rust-nightly-x86_64-pc-windows-gnu.tar.gz
+         setup: 'mv rust-nightly-x86_64-pc-windows-gnu rust'
+     1.61.0:
+       osx:
+         downloads:
+           - url: https://static.rust-lang.org/dist/rust-1.61.0-x86_64-apple-darwin.tar.gz
+       armosx:
+         downloads:
+           - url: https://static.rust-lang.org/dist/rust-1.61.0-aarch64-apple-darwin.tar.gz
+       linux:
+         downloads:
+           - url: https://static.rust-lang.org/dist/rust-1.61.0-x86_64-unknown-linux-gnu.tar.gz
+       armlinux:
+         downloads:
+           - url: https://static.rust-lang.org/dist/rust-1.61.0-aarch64-unknown-linux-gnu.tar.gz
+       windows:
+         downloads:
+           - url: https://static.rust-lang.org/dist/rust-1.61.0-x86_64-pc-windows-gnu.tar.gz
