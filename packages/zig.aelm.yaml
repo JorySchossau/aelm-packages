@@ -42,10 +42,10 @@ zig:
            - url: https://ziglang.org/download/{version}/zig-windows-x86_64-{version}.zip
          setup: move {root}\zig-windows-x86_64-{version} {root}\zig
          postsetup: |
-           cho @echo off & echo {root}\zig\zig cc -target x86_64-windows-gnu %*) > {root}\zig\gcc.bat
-           py {root}\zig\gcc.bat {root}\zig\clang.bat
-           cho @echo off & echo {root}\zig\zig c++ -target x86_64-windows-gnu %*) > {root}\zig\g++.bat
-           py {root}\zig\g++.bat {root}\zig\clang++.bat
+           echo @echo off & echo {root}\zig\zig cc -target x86_64-windows-gnu %*) > {root}\zig\gcc.bat
+           copy {root}\zig\gcc.bat {root}\zig\clang.bat
+           echo @echo off & echo {root}\zig\zig c++ -target x86_64-windows-gnu %*) > {root}\zig\g++.bat
+           copy {root}\zig\g++.bat {root}\zig\clang++.bat
            
        armosx:
          downloads:
