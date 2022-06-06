@@ -1,0 +1,38 @@
+tea:
+  description: |
+    "tea is a productivity helper for Gitea. It can be used to manage most entities on
+    one or multiple Gitea instances & provides local helpers like 'tea pr checkout'.
+    
+    tea tries to make use of context provided by the repository in $PWD if available.
+    tea works best in a upstream/fork workflow, when the local main branch tracks the
+    upstream repo. tea assumes that local git state is published on the remote before
+    doing operations with tea.    Configuration is persisted in $XDG_CONFIG_HOME/tea."
+    - https://gitea.com/gitea/tea/
+  binpaths: ['{root}']
+  versions:
+    latest:
+      linux:
+        downloads:
+          - url: https://gitea.com/attachments/bba60977-7066-4376-b232-941855b6015b
+            name: tea
+            uncompress: false
+      armlinux:
+        downloads:
+          - url: https://gitea.com/attachments/23a8daab-b583-439a-9360-c02d1f8fd053
+            name: tea
+            uncompress: false
+      osx:
+        downloads:
+          - url: https://gitea.com/attachments/3284a30d-ebf2-4f9a-9558-390b666dff5d
+            name: tea
+            uncompress: false
+      armosx:
+        downloads:
+          - url: https://gitea.com/attachments/4250d89d-835b-4ff2-ba97-6d67b9a0b757
+            name: tea
+            uncompress: false
+      windows:
+        downloads:
+          - url: https://gitea.com/attachments/8267f4c0-e612-45ac-91a1-fb0c2ec4c577
+            name: tea.exe
+            uncompress: false

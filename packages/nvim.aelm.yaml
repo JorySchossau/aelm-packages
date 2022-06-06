@@ -1,0 +1,15 @@
+nvim:
+  description: |
+    "Neovim is a project that seeks to aggressively refactor Vim in order to:
+    * Simplify maintenance and encourage contributions
+    * Split the work between multiple developers
+    * Enable advanced UIs without modifications to the core
+    * Maximize extensibility"
+    - https://github.com/neovim/neovim
+  versions:
+    latest:
+      auto: https://github.com/neovim/neovim
+    v0.6.1:
+      auto: https://github.com/neovim/neovim
+    v0.6.0:
+      auto: https://github.com/neovim/neovim

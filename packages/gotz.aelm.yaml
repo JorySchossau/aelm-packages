@@ -1,0 +1,7 @@
+gotz:
+  description: |
+    "gotz - a simple CLI timezone info tool."
+    - https://github.com/merschformann/gotz
+  versions:
+    latest:
+      auto: https://github.com/merschformann/gotz

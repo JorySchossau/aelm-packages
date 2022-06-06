@@ -1,0 +1,8 @@
+lazygit:
+  description: |
+    "A simple terminal UI for git commands, written in Go with the gocui
+    library."
+    - https://github.com/jesseduffield/lazygit
+  versions:
+    latest:
+      auto: https://github.com/jesseduffield/lazygit

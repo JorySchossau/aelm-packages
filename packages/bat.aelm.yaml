@@ -1,0 +1,13 @@
+bat:
+  description: |
+    "A cat(1) clone with syntax highlighting and Git integration.
+    bat tries to achieve the following goals:
+    * Provide beautiful, advanced syntax highlighting
+    * Integrate with Git to show file modifications
+    * Be a drop-in replacement for (POSIX) cat
+    * Offer a user-friendly command-line interface"
+    - https://github.com/sharkdp/bat
+
+  versions:
+    latest:
+      auto: https://github.com/sharkdp/bat

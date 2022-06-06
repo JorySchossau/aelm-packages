@@ -1,0 +1,22 @@
+broot:
+  description: |
+    "A better way to navigate directories"
+    - https://github.com/Canop/broot
+  versions:
+    1.13.1:
+      downloads:
+        - url: https://github.com/Canop/broot/releases/download/v1.13.1/broot_1.13.1.zip
+      linux:
+        binpaths: ['{root}/x86_64-linux']
+      windows:
+        binpaths: ['{root}/x86_64-pc-windows-gnu']
+      osx:
+        unavailable: |
+          No OSX prebuilt binaries yet.
+          See this issue: https://github.com/Canop/broot/issues/278
+      armlinux:
+        binpaths: ['{root}/aarch64-linux-android']
+      armosx:
+        unavailable: |
+          No OSX prebuilt binaries yet.
+          See this issue: https://github.com/Canop/broot/issues/278

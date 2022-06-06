@@ -1,0 +1,7 @@
+dog:
+  description: |
+    "dog is a command-line DNS client."
+    - https://github.com/ogham/dog
+  versions:
+    latest:
+      auto: https://github.com/ogham/dog

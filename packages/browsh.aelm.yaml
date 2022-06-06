@@ -1,0 +1,8 @@
+browsh:
+  description: |
+    "A fully interactive, real-time, and modern text-based browser rendered to
+    TTYs and browsers"
+    - https://github.com/browsh-org/browsh
+  versions:
+    latest:
+      auto: https://github.com/browsh-org/browsh

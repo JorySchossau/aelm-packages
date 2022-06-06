@@ -1,0 +1,7 @@
+hyperfine:
+  description: |
+    "A command-line benchmarking tool."
+    - https://github.com/sharkdp/hyperfine
+  versions:
+    latest:
+      auto: https://github.com/sharkdp/hyperfine

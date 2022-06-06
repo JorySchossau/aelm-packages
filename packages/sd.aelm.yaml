@@ -1,0 +1,7 @@
+sd:
+  description: |
+    "sd is an intuitive find & replace CLI."
+    - https://github.com/chmln/sd
+  versions:
+    latest:
+      auto: https://github.com/chmln/sd

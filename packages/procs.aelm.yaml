@@ -1,0 +1,7 @@
+procs:
+  description: |
+    "procs is a replacement for ps written in Rust."
+    - https://github.com/dalance/procs
+  versions:
+    latest:
+      auto: https://github.com/dalance/procs

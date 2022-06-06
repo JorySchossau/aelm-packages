@@ -1,0 +1,7 @@
+dust:
+  description: |
+    "du + rust = dust. Like du but more intuitive."
+    - https://github.com/bootandy/dust
+  versions:
+    latest:
+      auto: https://github.com/bootandy/dust

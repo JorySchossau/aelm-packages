@@ -1,0 +1,7 @@
+choose:
+  description: |
+    "choose, a human-friendly and fast alternative to cut and (sometimes) awk"
+    - https://github.com/theryangeary/choose
+  versions:
+    latest:
+      auto: https://github.com/theryangeary/choose

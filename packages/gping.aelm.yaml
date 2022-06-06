@@ -1,0 +1,7 @@
+gping:
+  description: |
+    "Ping, but with a graph."
+    - https://github.com/orf/gping
+  versions:
+    latest:
+      auto: https://github.com/orf/gping

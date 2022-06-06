@@ -1,0 +1,7 @@
+fx:
+  description: |
+    "Terminal JSON viewer 'function execution'"
+    - https://github.com/antonmedv/fx
+  versions:
+    latest:
+      auto: https://github.com/antonmedv/fx

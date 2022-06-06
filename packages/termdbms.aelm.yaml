@@ -1,0 +1,7 @@
+termdbms:
+  description: |
+    "A TUI for viewing and editing databases, written in pure Go"
+    - https://github.com/mathaou/termdbms
+  versions:
+    latest:
+      auto: https://github.com/mathaou/termdbms

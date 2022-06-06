@@ -1,0 +1,9 @@
+lf:
+  description: |
+    "lf (as in 'list files') is a terminal file manager written in Go with a
+    heavy inspiration from ranger file manager. See faq for more information
+    and tutorial for a gentle introduction with screencasts."
+    - https://github.com/gokcehan/lf
+  versions:
+    latest:
+      auto: https://github.com/gokcehan/lf
