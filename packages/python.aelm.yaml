@@ -4,7 +4,11 @@ python:
      integrate your systems more effectively."
      - https://www.python.org/
    setup: ln -s {root}/python/bin/python3 {root}/python/bin/python
+   # presetup and postsetup are never overridden in this module
+   presetup: curl -sSL https://bootstrap.pypa.io/get-pip.py -o {root}/get-pip.py
+   aelmscript: aelm x {root} python {root}/get-pip.py
    binpaths: ['{root}/python/bin']
+   postsetup: rm {root}/get-pip.py
    envvars:
      PYTHONHOME: '{root}/python'
      PYTHONPATH: '{cwd}'
@@ -29,10 +33,10 @@ python:
            - url: https://github.com/indygreg/python-build-standalone/releases/download/20220318/cpython-3.10.3+20220318-aarch64-unknown-linux-gnu-install_only.tar.gz
      3.7.9:
        setup: ln -s {root}/python/install/bin/python3 {root}/python/install/bin/python
-       binpaths: ['{root}/python/install','{root}/python/install/Scripts']
+       binpaths: ['{root}/python/install/bin','{root}/python/install/Scripts']
        envvars:
          PYTHONHOME: '{root}/python/install'
-         PYTHONPATH: '{cwd}'
+         #PYTHONPATH: '{cwd}'
        osx:
          downloads:
            - url: https://github.com/indygreg/python-build-standalone/releases/download/20200822/cpython-3.7.9-x86_64-apple-darwin-pgo-20200823T0123.tar.zst
