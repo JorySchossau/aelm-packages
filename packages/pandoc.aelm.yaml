@@ -1,0 +1,10 @@
+pandoc:
+  description: |
+    "The universal markup converter. Pandoc is a Haskell library for converting
+    from one markup format to another, and a command-line tool that uses this
+    library."
+    - https://github.com/jgm/pandoc
+    - https://pandoc.org/index.html
+  versions:
+    latest:
+      auto: https://github.com/jgm/pandoc
