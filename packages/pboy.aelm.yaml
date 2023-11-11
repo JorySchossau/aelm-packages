@@ -16,10 +16,13 @@ pboy:
     database or hidden library folder), so you can uninstall it at any time and
     your files will remain perfectly accessible."
     - https://github.com/2mol/pboy
-  envvars:
-    # location of database
-    _ZO_DATA_DIR: /home/jory/projects/aelm-packages/packages/new/pboy
+  binpaths: ['{root}']
   testcmd: ls {root}/pboy
   versions:
-    latest:
-      auto: https://github.com/2mol/pboy
+    1.7:
+      osx:
+        downloads:
+          - url: https://github.com/2mol/pboy/releases/download/{version}/pboy-osx.tar.gz
+      linux:
+        downloads:
+          - url: https://github.com/2mol/pboy/releases/download/{version}/pboy-linux.tar.gz
