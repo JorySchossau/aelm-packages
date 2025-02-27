@@ -3,7 +3,6 @@ python:
      "Python is a programming language that lets you work more quickly and
      integrate your systems more effectively."
      - https://www.python.org/
-   setup: ln -s {root}/python/bin/python3 {root}/python/bin/python
    # presetup and postsetup are never overridden in this module
    presetup: curl -sSL https://bootstrap.pypa.io/get-pip.py -o {root}/get-pip.py
    aelmscript: aelm x {root} python {root}/get-pip.py
@@ -13,7 +12,26 @@ python:
      PYTHONHOME: '{root}/python'
      PYTHONPATH: '{cwd}'
    versions:
+     3.12.9:
+       osx:
+         downloads:
+           - url: https://github.com/indygreg/python-build-standalone/releases/download/20250212/cpython-3.12.9+20250212-x86_64-apple-darwin-install_only.tar.gz
+       linux:
+         downloads:
+           - url: https://github.com/indygreg/python-build-standalone/releases/download/20250212/cpython-3.12.9+20250212-x86_64-unknown-linux-gnu-install_only.tar.gz
+       windows:
+         downloads:
+           - url: https://github.com/indygreg/python-build-standalone/releases/download/20250212/cpython-3.12.9+20250212-x86_64-pc-windows-msvc-shared-install_only.tar.gz
+         binpaths: ['{root}/python','{root}/python/Scripts']
+         setup: cp {root}/python/python.exe {root}/python/python3.exe
+       armosx:
+         downloads:
+           - url: https://github.com/indygreg/python-build-standalone/releases/download/20250212/cpython-3.12.9+20250212-aarch64-apple-darwin-install_only.tar.gz
+       armlinux:
+         downloads:
+           - url: https://github.com/indygreg/python-build-standalone/releases/download/20250212/cpython-3.12.9+20250212-aarch64-unknown-linux-gnu-install_only.tar.gz
      3.10.13:
+       setup: ln -s {root}/python/bin/python3 {root}/python/bin/python
        osx:
          downloads:
            - url: https://github.com/indygreg/python-build-standalone/releases/download/20231002/cpython-3.10.13+20231002-x86_64-apple-darwin-install_only.tar.gz
@@ -32,6 +50,7 @@ python:
          downloads:
            - url: https://github.com/indygreg/python-build-standalone/releases/download/20231002/cpython-3.10.13+20231002-aarch64-unknown-linux-gnu-install_only.tar.gz
      3.10.3:
+       setup: ln -s {root}/python/bin/python3 {root}/python/bin/python
        osx:
          downloads:
            - url: https://github.com/indygreg/python-build-standalone/releases/download/20220318/cpython-3.10.3+20220318-x86_64-apple-darwin-install_only.tar.gz
