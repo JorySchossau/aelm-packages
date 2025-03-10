@@ -3,7 +3,6 @@ python:
      "Python is a programming language that lets you work more quickly and
      integrate your systems more effectively."
      - https://www.python.org/
-   # presetup and postsetup are never overridden in this module
    presetup: curl -sSL https://bootstrap.pypa.io/get-pip.py -o {root}/get-pip.py
    aelmscript: aelm x {root} python {root}/get-pip.py
    binpaths: ['{root}/python/bin']
